@@ -2,79 +2,255 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Browser extensions manager UI</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
 
-  Extensions List
-
-  All
-  Active
-  Inactive
-
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-  DevLens
-  Quickly inspect page layouts and visualize element boundaries.
-  Remove
-
-  StyleSpy
-  Instantly analyze and copy CSS from any webpage element.
-  Remove
-
-  SpeedBoost
-  Optimizes browser resource usage to accelerate page loading.
-  Remove
-
-  JSONWizard
-  Formats, validates, and prettifies JSON responses in-browser.
-  Remove
-
-  TabMaster Pro
-  Organizes browser tabs into groups and sessions.
-  Remove
-
-  ViewportBuddy
-  Simulates various screen resolutions directly within the browser.
-  Remove
-
-  Markup Notes
-  Enables annotation and notes directly onto webpages for collaborative debugging.
-  Remove
-
-  GridGuides
-  Overlay customizable grids and alignment guides on any webpage.
-  Remove
-
-  Palette Picker
-  Instantly extracts color palettes from any webpage.
-  Remove
-
-  LinkChecker
-  Scans and highlights broken links on any page.
-  Remove
-
-  DOM Snapshot
-  Capture and export DOM structures quickly.
-  Remove
-
-  ConsolePlus
-  Enhanced developer console with advanced filtering and logging.
-  Remove
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<body class="theme-dark">
+  <div class="container">
+    <header class="header">
+      <div class="header__left">
+        <img src="./assets/images/logo.svg" alt="Extensions logo" class="header__logo" />
+      </div>
+      <button class="header__theme-toggle" aria-label="Toggle Theme">
+        <img src="./assets/images/icon-sun.svg" alt="" />
+      </button>
+    </header>
+    <main class="main">
+      <section class="filters" aria-label="Extension filters">
+        <h2 class="filters__title">Extensions List</h2>
+        <div class="filters__buttons">
+          <button class="filters__btn filters__btn--active">All</button>
+          <button class="filters__btn">Active</button>
+          <button class="filters__btn">Inactive</button>
+        </div>
+      </section>
+      <section class="extensions-grid" aria-label="Extensions Grid">
+        <div class="extension-card extension-card--devlens">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-devlens.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">DevLens</h3>
+              <p class="extension-card__desc">Quickly inspect page layouts and visualize element boundaries.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="devlens" class="extension-card__toggle-checkbox">
+              <label for="devlens" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--stylespy">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-style-spy.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">StyleSpy</h3>
+              <p class="extension-card__desc">Instantly analyze and copy CSS from any webpage element.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="stylespy" class="extension-card__toggle-checkbox">
+              <label for="stylespy" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--speedboost">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-speed-boost.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">SpeedBoost</h3>
+              <p class="extension-card__desc">Optimizes browser resource usage to accelerate page loading.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="speedboost" class="extension-card__toggle-checkbox">
+              <label for="speedboost" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--jsonwizard">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-json-wizard.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">JSONWizard</h3>
+              <p class="extension-card__desc">Formats, validates, and prettifies JSON responses in-browser.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="jsonwizard" class="extension-card__toggle-checkbox">
+              <label for="jsonwizard" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--tabmasterpro">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-tab-master-pro.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">TabMaster Pro</h3>
+              <p class="extension-card__desc">Organizes browser tabs into groups and sessions.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="tabmaster" class="extension-card__toggle-checkbox">
+              <label for="tabmaster" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--viewportbuddy">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-viewport-buddy.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">ViewportBuddy</h3>
+              <p class="extension-card__desc">Simulates various screen resolutions directly within the browser.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="viewportbuddy" class="extension-card__toggle-checkbox">
+              <label for="viewportbuddy" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--markupnotes">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-markup-notes.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">Markup Notes</h3>
+              <p class="extension-card__desc">Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="markupnotes" class="extension-card__toggle-checkbox">
+              <label for="markupnotes" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--gridguides">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-grid-guides.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">GridGuides</h3>
+              <p class="extension-card__desc">Overlay customizable grids and alignment guides on any webpage.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="gridguides" class="extension-card__toggle-checkbox">
+              <label for="gridguides" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--palettepicker">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-palette-picker.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">Palette Picker</h3>
+              <p class="extension-card__desc">Instantly extracts color palettes from any webpage.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="palettepicker" class="extension-card__toggle-checkbox">
+              <label for="palettepicker" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--linkchecker">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-link-checker.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">LinkChecker</h3>
+              <p class="extension-card__desc">Scans and highlights broken links on any page.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="linkchecker" class="extension-card__toggle-checkbox">
+              <label for="linkchecker" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--domsnapshot">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-dom-snapshot.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">DOM Snapshot</h3>
+              <p class="extension-card__desc">Capture and export DOM structures quickly.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="domsnapshot" class="extension-card__toggle-checkbox">
+              <label for="domsnapshot" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="extension-card extension-card--consoleplus">
+          <div class="extension-card__info">
+            <img src="./assets/images/logo-console-plus.svg" alt="" class="extension-card__icon" />
+            <div class="extension-card__text">
+              <h3 class="extension-card__title">ConsolePlus</h3>
+              <p class="extension-card__desc">Enhanced developer console with advanced filtering and logging.</p>
+            </div>
+          </div>
+          <div class="extension-card__actions">
+            <button class="extension-card__remove">Remove</button>
+            <div class="extension-card__toggle">
+              <input type="checkbox" id="consoleplus" class="extension-card__toggle-checkbox">
+              <label for="consoleplus" class="extension-card__toggle-label">
+                <span class="extension-card__toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
+
+<script src="./js/script.js"></script>
 </body>
 </html>

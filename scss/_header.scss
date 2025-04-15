@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use "sass:map";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 2.125rem;
+    border-radius: 0.75rem;
+    background-color: map.get($neutral, "neutral-800");
+
+    @include desktop {
+      margin-bottom: 4rem;
+    }
+
+    &__theme-toggle {
+        width: 3.125rem;
+        height: 3.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 0.625rem;
+        background-color: map.get($neutral, "neutral-600");
+    }
+}
+
+body.theme-light {
+    .header {
+      background-color: map.get($neutral, "neutral-000");
+  
+      &__theme-toggle {
+        background-color: map.get($neutral, "neutral-100");
+      }
+    }
+}

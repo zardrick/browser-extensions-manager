@@ -1,0 +1,69 @@
+@use 'variables' as *;
+@use "sass:map";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+    font-family: $font-family;
+    background: map.get($gradient, "dark-gradient");
+}
+
+body.theme-light {
+    background: map.get($gradient, "light-gradient");
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    max-width: 74rem;
+    margin: auto;
+}
+
+@include desktop {
+    .container {
+        padding-block: 2.5rem;
+    }
+}
+
+input[type="checkbox"]:focus, button:focus {
+    outline: 2px solid map.get($red, "red-500");
+} 

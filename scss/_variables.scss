@@ -1,0 +1,36 @@
+//COLORS
+$neutral: (
+  "neutral-900": hsl(227, 75%, 14%),
+  "neutral-800": hsl(226, 24%, 17%),
+  "neutral-700": hsl(225, 23%, 24%),
+  "neutral-600": hsl(226, 11%, 37%),
+  "neutral-300": hsl(0, 0%, 78%),
+  "neutral-200": hsl(217, 61%, 90%),
+  "neutral-100": hsl(0, 0%, 93%),
+  "neutral-000": hsl(200, 60%, 99%)
+);
+
+$red: (
+    "red-700": hsl(3, 77%, 44%),
+    "red-500": hsl(3, 71%, 56%),
+    "red-400": hsl(3, 86%, 64%)
+);
+
+$gradient: (
+    "light-gradient": linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%),
+    "dark-gradient": linear-gradient(180deg, #040918 0%, #091540 100%)
+);
+
+//TYPOGRAPHY
+$font-family: 'Noto Sans', sans-serif;
+$font-size-base: 1rem;
+$font-weight-light: 400;
+$font-weight-normal: 500;
+$font-weight-bold: 700;
+
+//Mixins
+@mixin desktop {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
