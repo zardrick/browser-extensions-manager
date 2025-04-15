@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/zardrick/browser-extensions-manager)
-- Live Site URL: [Live Site](zardrick.github.io/browser-extensions-manager)
+- Live Site URL: [Live Site](https://zardrick.github.io/browser-extensions-manager/)
 
 ## My process
 
